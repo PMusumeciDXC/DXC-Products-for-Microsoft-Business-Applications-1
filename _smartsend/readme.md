@@ -12,7 +12,7 @@ While out-of-the-box functionality is for the business forms listed [here](index
 
 **How can I use a different report format for different customers/vendors?**
 
-First, you'll need to set up each version of the report design in Smart Send Email parameters. For example, you may have two report designs for the Sales Invoice *SalesInvoice.Report* and *SalesInvoiceModern.Report*. Refer to [Smart send parameters](CONFIGURATION/Parameters).
+First, you'll need to set up each version of the report design in the Smart Send Email parameters. For example, you may have two report designs for the Sales Invoice *SalesInvoice.Report* and *SalesInvoiceModern.Report*. Refer to [Smart send parameters](CONFIGURATION/Parameters).
 
 Then, using Print Management conditions, set a query with a set of criteria to use the different report design. When the report is run using Print Management, the Smart Send button will select the report design according to the Print Management setup. Refer to [Print management conditions](PROCESSES/Email-processing).
 
@@ -45,17 +45,17 @@ The main reasons this would occur:
 
 **Can I use images in the email body?**
 
-Yes. Although this feature is standard Dynamics 365 email functionality, not Smart Send specific. However, to achieve this, the image must be converted into html.
+Yes. Although this feature is standard Dynamics 365 email functionality, not Smart Send specific. However, to achieve this, the image must be converted into HTML.
 
 **Why are the token placeholders used in the filename not the same as the Dynamics 365 field?**
 
 Placeholder tokens can contain invalid characters that are inserted in a filename, and therefore, Smart Send is unable to create the file. A standard function "GetInvalidFileNameChars" is used to find and replace invalid characters with spaces.
 
-**Can I use Smart Send with the Email Body feature in Print management?**
+**Can I use Smart Send with the Email Body feature in Print Management?**
 
 When sending a document via email, a basic email body can be included thanks to the *Document Report email body* functionality, which was enabled by default starting with version 10.0.39.  This is a different feature from Smart Send that creates dynamic, transaction-based email templates using the Organisation email templates. 
 
-**How do I send my confirmation to the contact on my order instead of the main contact on the account ?**
+**How do I send my confirmation to the contact on my order instead of the main contact on the account?**
 From the Recipient drop-down menu in Email Parameters, simply select "Specific" for the nominated report.  This will use the email address specified on the sales order header or purchase order header.
 
 **My company logo stored in FinOps will not render in emails anymore.**
@@ -70,19 +70,19 @@ and paste the value in the *URL* field into the quotation marks after *img src=*
 ![Azure_URL](IMAGES/Azure_URL.png)
 
 **My Vendor Payment Advice Batch task failed with "An error occurred when running report".**
-When populating your Vednor Journal lines enure that the “Offset account type” or “Method of payment” are populated and not left blank
+When populating your Vendor Journal lines, ensure that the “Offset account type” or “Method of payment” are populated and not left blank
 
 
 ### Blob Storage Errors
 
 **When sending my file via Smart Send, I get "Message: The specified blob already exists."**
 
-This message indicates that the file name already exists in your blob storage location.  If you have the Overwrite radio button in your email parameters set to "No",  files are not automatically overwritten when saving to blob storage and an error is thrown to indicate as such.  
+This message indicates that the file name already exists in your blob storage location.  If you have the Overwrite radio button in your email parameters set to "No",  files are not automatically overwritten when saving to blob storage, and an error is thrown to indicate as such.  
 
 
 ### Dependency and Security Information
 
-Data stored securely inside Finance and Operations
+Data is stored securely inside Finance and Operations
 
 DXC Smart Business Form Email Manager for Microsoft Dynamics 365 Finance and Operations (Smart Send) makes use of the existing email configuration influenced by a combination of administrator configuration, user configuration, and user choices.
 
